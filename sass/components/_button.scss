@@ -6,7 +6,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     background-color: $color-primary-light;
-    border-radius: 5px;
+    border-radius: $default-radius;
     color: $color-primary;
   }
   &:hover,
