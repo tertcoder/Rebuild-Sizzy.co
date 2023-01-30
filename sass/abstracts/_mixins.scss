@@ -1,0 +1,11 @@
+@mixin linkmodified {
+  text-decoration: none;
+}
+@mixin listmodified {
+  list-style: none;
+}
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,139 @@
+.heading__guide {
+  // width: 100%;
+  border-bottom: 1px solid $color-gray-3;
+
+  &--content {
+    max-width: 96rem;
+    margin: 0 auto;
+    @include flex-centered;
+    justify-content: space-between;
+
+    padding: 1rem 1.6rem;
+  }
+}
+
+.navigation__logo {
+  @include flex-centered;
+  gap: 1rem;
+  &--img {
+    img {
+      width: 3.2rem;
+    }
+  }
+  &--text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-gray;
+  }
+}
+
+.navigation__links {
+  .nav__list {
+    @include flex-centered;
+    @include listmodified;
+    // gap: 5rem;
+
+    &--item {
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      &-link {
+        &:link,
+        &:visited {
+          @include linkmodified;
+          display: inline-block;
+          padding: 1rem 1.5rem;
+          color: $color-gray;
+          border-radius: 5px;
+        }
+        &:hover,
+        &:active {
+          background-color: $color-gray-2;
+        }
+      }
+
+      &-notify {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        .alert--notification {
+          @include flex-centered;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 1.8rem;
+          height: 1.8rem;
+          font-size: 1.2rem;
+          color: $color-white;
+          font-weight: initial;
+          text-align: center;
+          background-color: $color-additional-1;
+          border-radius: 100px;
+          transform: translate(0.5rem, -0.25rem);
+
+          &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            min-width: inherit;
+            height: inherit;
+            background-color: $color-additional-1;
+            transform: scale(1);
+            animation: fadeOut 1.5s ease forwards infinite;
+            border-radius: inherit;
+          }
+        }
+      }
+
+      //Learn Option drop-down on hover
+      &-hovered {
+        .learn__option {
+          display: block;
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          width: 20rem;
+          background-color: $color-white;
+          border: 1px solid $color-gray-3;
+          border-radius: 5px;
+          transform: translateX(-8rem) translateY(-0.1rem);
+
+          transition: 0.3s ease-in-out;
+
+          .learn__list {
+            @include listmodified;
+            padding: 5px;
+
+            &--option {
+              font-size: 1.5rem;
+              font-weight: 500;
+              &-link {
+                &:link,
+                &:visited {
+                  @include linkmodified;
+                  display: block;
+                  padding: 1.25rem 1rem;
+                  color: $color-gray;
+                  border-radius: 5px;
+                }
+                &:hover,
+                &:active {
+                  background-color: $color-gray-2;
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          .learn__option {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-8rem) translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
