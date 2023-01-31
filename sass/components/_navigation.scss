@@ -3,15 +3,25 @@
   border-bottom: 1px solid $color-gray-3;
 
   &--content {
-    max-width: 96rem;
-    margin: 0 auto;
     @include flex-centered;
     justify-content: space-between;
-
+    max-width: 96rem;
+    margin: 0 auto;
     padding: 1rem 1.6rem;
   }
 }
-
+/////////
+.navigation__mobile {
+  @include respond(phone) {
+    display: none;
+  }
+}
+.nav__btn--toggle {
+  @include respond(phone) {
+    display: none;
+  }
+}
+////////
 .navigation__logo {
   @include flex-centered;
   gap: 1rem;
@@ -135,5 +145,116 @@
         }
       }
     }
+  }
+  @include respond(phone) {
+    display: none;
+  }
+}
+.navigation__cta {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+//Mobile Navigation
+.nav__btn--toggle {
+  @include respond(phone) {
+    display: block;
+    // position: absolute;
+    // top: 2rem;
+    // right: 2rem;
+  }
+  .toggle__checker {
+    display: none;
+  }
+  .btn-toggle {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      height: 0.18rem;
+      width: 1.8rem;
+      background-color: $color-gray;
+    }
+
+    // padding: 1rem;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.5rem;
+    }
+    &::after {
+      top: 0.5rem;
+    }
+  }
+  .toggle__checker:checked + .btn-check .btn-toggle {
+    & {
+      background-color: transparent;
+    }
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+  .navigation__mobile {
+    @include respond(phone) {
+      display: block;
+    }
+    .navigation__mobile--links {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      background-color: $color-white;
+      border: 1px solid $color-gray-3;
+      border-radius: $default-radius;
+      box-shadow: 0 0 1.5rem $color-gray-3;
+      transition: 0.2s ease-in-out;
+      z-index: 1000;
+
+      .nav__mob--list {
+        @include listmodified;
+        padding: 5px;
+
+        &-item {
+          font-size: 1.5rem;
+          font-weight: 500;
+          &-link {
+            &:link,
+            &:visited {
+              @include linkmodified;
+              display: block;
+              padding: 1.25rem 1rem;
+              color: $color-gray;
+              border-radius: $default-radius;
+            }
+            &:hover,
+            &:active {
+              background-color: $color-gray-2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .toggle__checker:checked ~ .navigation__mobile .navigation__mobile--links {
+    opacity: 1;
+    visibility: visible;
   }
 }
