@@ -12,14 +12,10 @@
 }
 /////////
 .navigation__mobile {
-  @include respond(phone) {
-    display: none;
-  }
+  display: none;
 }
 .nav__btn--toggle {
-  @include respond(phone) {
-    display: none;
-  }
+  display: none;
 }
 ////////
 .navigation__logo {
@@ -33,7 +29,7 @@
   &--text {
     font-size: 2rem;
     font-weight: 700;
-    color: $color-gray;
+    color: $color-black;
   }
 }
 
@@ -233,14 +229,14 @@
 
         &-item {
           font-size: 1.5rem;
-          font-weight: 500;
+          font-weight: 400;
           &-link {
             &:link,
             &:visited {
               @include linkmodified;
               display: block;
               padding: 1.25rem 1rem;
-              color: $color-gray;
+              color: $color-black;
               border-radius: $default-radius;
             }
             &:hover,
