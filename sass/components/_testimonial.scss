@@ -1,0 +1,51 @@
+.product__rating {
+  @include flex-centered;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  gap: 2rem;
+
+  .product__hunt {
+    @include flex-centered;
+    &--size {
+      width: 12.5rem;
+    }
+    &--img {
+      width: 100%;
+    }
+    &--text {
+      @include flex-centered;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.testimonies {
+  .users__testimonies {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 69rem;
+    margin: 3rem auto 1rem auto;
+    &--user {
+      width: 4.4rem;
+      height: 4.4rem;
+      border: 0.2rem solid $color-white;
+      border-radius: 100px;
+      overflow: hidden;
+
+      &:not(:first-child) {
+        margin-left: -1rem;
+      }
+
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+  &__caption {
+    font-size: 1.8rem;
+    color: $color-gray;
+    font-style: italic;
+  }
+}
