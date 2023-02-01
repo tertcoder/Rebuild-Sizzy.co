@@ -44,13 +44,29 @@
 // STYLE Testimonies
 .testimonies {
   .users__testimonies {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 69rem;
+    margin: 3rem auto 1rem auto;
     &--user {
       width: 4.4rem;
       height: 4.4rem;
+      border: 0.2rem solid $color-white;
+      border-radius: 100px;
+      overflow: hidden;
+
+      &:not(:first-child) {
+        margin-left: -1rem;
+      }
 
       &-img {
         width: 100%;
       }
     }
+  }
+  &__caption {
+    font-size: 1.8rem;
+    color: $color-gray;
+    font-style: italic;
   }
 }
