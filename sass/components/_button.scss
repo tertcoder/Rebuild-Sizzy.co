@@ -14,3 +14,57 @@
     background-color: $color-primary-dark;
   }
 }
+
+.welcome__cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+  &--box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      font-size: 1.4rem;
+      color: $color-gray;
+    }
+  }
+
+  &--btn {
+    border-radius: 5rem;
+    a {
+      @include linkmodified;
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 1.5rem 3rem;
+    }
+  }
+  &--btn1 {
+    background: linear-gradient(
+      45deg,
+      $color-primary 0%,
+      $color-additional-2 100%
+    );
+
+    &:hover {
+      background-size: 200%;
+    }
+    a {
+      color: $color-white;
+    }
+  }
+  &--btn2 {
+    border: 1px solid $color-primary;
+    a {
+      color: $color-primary;
+    }
+
+    &:hover {
+      background-color: rgba($color-primary-light, 0.35);
+    }
+  }
+}
