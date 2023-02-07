@@ -1,0 +1,35 @@
+.moreNew {
+  &__heading {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  &__savetime {
+    margin-top: 2rem;
+
+    &--heading {
+      color: $color-primary;
+      margin-bottom: 2rem;
+    }
+    &--text {
+    }
+    &--quote {
+      position: relative;
+      border: 1px solid;
+
+      .quotesvgLeft {
+        svg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .quotesvgRight {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
